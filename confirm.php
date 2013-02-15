@@ -8,6 +8,7 @@ include 'secret.php';
 $Twitter = new EpiTwitter($consumerKey, $consumerSecret); 
 $Twitter->setToken($_GET['oauth_token']);  
 $token = $Twitter->getAccessToken();  
+$username=$token->username;
 print_r($token);
 setcookie('oauth_token', $token->oauth_token);
 setcookie('oauth_token_secret', $token->oauth_token_secret);
